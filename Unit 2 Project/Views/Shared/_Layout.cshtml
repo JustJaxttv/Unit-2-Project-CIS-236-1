@@ -8,11 +8,21 @@
     <style>
         body {
             background-color: #f8f9fa; 
+            height: 100vh;
+        }
+
+        .content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
 
         .header {
             background-color: #007bff;
             color: white;
+            padding: 20px 0;
+            width: 100%;
+            text-align: center;
         }
 
         .table td, .table td {
@@ -22,7 +32,8 @@
     </style>
 </head>
 <body>
-    <div class="container">
+    <!-- Header -->
+    <div class="container content">
         <header class="jumbotron text-center">
             <h1 class="display-4">Employees</h1>
             <p class="lead">Manage your employee records efficiently.</p>
