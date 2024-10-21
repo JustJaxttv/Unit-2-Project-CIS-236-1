@@ -13,6 +13,6 @@
         public string? Position { get; set; }
 
         // Employee Salary
-        public double? Salary { get; set; }
+        public decimal? Salary { get; set; }
     }
 }

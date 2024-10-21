@@ -6,13 +6,13 @@ using Unit_2_Project.Models;
 namespace Unit_2_Project.Controllers
 {
     // Controller to manage actions
-    public class EmployeesController : Controller
+    public class HomeController : Controller
     {
         // Injection for DbContext
         private EmployeeDBContext context { get; set; }
 
         // Accepts DbContext
-        public EmployeesController(EmployeeDBContext context)
+        public HomeController(EmployeeDBContext context)
         {
             this.context = context;
         }
