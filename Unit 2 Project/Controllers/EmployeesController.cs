@@ -23,5 +23,48 @@ namespace Unit_2_Project.Controllers
             var employees = context.Employees.OrderBy(c => c.Id).ToList();
             return View(employees);
         }
+
+        [HttpGet]
+        public IActionResult Add()
+        {
+            ViewBag.Action = "Add";
+            return View("Edit", new Employee());
+        }
+        [HttpGet]
+        public IActionResult Edit(int id)
+        {
+            ViewBag.Action = "Edit";
+            var employee = context.Employees.Find(id);
+            return View(employee);
+        }
+        [HttpPost]
+        public IActionResult Edit(Employee employee)
+        {
+            if (ModelState.IsValid)
+            {
+                if (employee.Id == 0) context.Employees.Add(employee);
+                else
+                    context.Employees.Update(employee);
+                context.SaveChanges();
+                return RedirectToAction("Index", "Home");
+            }
+            else
+            {
+                ViewBag.Action = (employee.Id == 0) ? "Add" : "Edit";
+                return View(employee);
+            }
+        }
+        [HttpGet]
+        public IActionResult Delete(int id)
+        {
+            var employee = context.Employees.Find(id);
+            return View(employee);
+        }
+        [HttpPost]
+        public IActionResult Delete(Employee employee)
+        {
+            context.Employees.Remove(employee); context.SaveChanges();
+            return RedirectToAction("Index", "Home");
+        }
     }
 }
