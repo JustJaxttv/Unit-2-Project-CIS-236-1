@@ -7,7 +7,7 @@
 <h2>Employee List</h2>
 
 <!-- Table to display employees -->
-<a asp-controller="Employee" asp-action="Add">Add New Employee</a>
+<a asp-controller="Home" asp-action="Add">Add New Employee</a>
 <table class="table table-bordered table-striped">
     <thead>
         <tr>
@@ -26,8 +26,8 @@
                 <td>@employee.Position</td>
                 <td>@employee.Salary</td>
                 <td>
-                    <a asp-controller="Movie" asp-action="Edit" asp-route-id="@employee.Id">Edit</a>
-                    <a asp-controller="Movie" asp-action="Delete" asp-route-id="@employee.Id">Delete</a>
+                    <a asp-controller="Home" asp-action="Edit" asp-route-id="@employee.Id">Edit</a>
+                    <a asp-controller="Home" asp-action="Delete" asp-route-id="@employee.Id">Delete</a>
                 </td>
             </tr>
         }
