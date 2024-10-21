@@ -3,8 +3,10 @@
     ViewData["Title"] = "Employees";
 }
 
+<!-- Heading -->
 <h2>Employee List</h2>
 
+<!-- Table to display employees -->
 <a asp-controller="Employee" asp-action="Add">Add New Employee</a>
 <table class="table table-bordered table-striped">
     <thead>
@@ -15,9 +17,11 @@
         </tr>
     </thead>
     <tbody>
+        <!-- Loop through employees -->
         @foreach (var employee in Model)
         {
             <tr>
+                <!-- Display employees -->
                 <td>@employee.Name</td>
                 <td>@employee.Position</td>
                 <td>@employee.Salary</td>

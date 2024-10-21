@@ -2,8 +2,12 @@
 @{
     ViewBag.Title = "Delete Employee";
 }
+
+<!-- Heading -->
 <h2>Confirm Deletion</h2>
 <h3>@Model.Name (@Model.Position)</h3>
+
+<!-- Form to delete employee -->
 <form asp-action="Delete" method="post">
     <input type="hidden" asp-for="Id" />
     <button type="submit" class="btn btn-primary">Delete</button>

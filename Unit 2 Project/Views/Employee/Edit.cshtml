@@ -3,7 +3,11 @@
     string title = ViewBag.Action + " Employee";
     ViewBag.Title = title;
 }
+
+<!-- Heading -->
 <h2>@ViewBag.Title</h2>
+
+<!-- Form to edit employee -->
 <form asp-action="Edit" method="post">
     <div asp-validation-summary="All" class="text-danger"></div>
 
